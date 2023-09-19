@@ -20,6 +20,7 @@ class _WelcomeState extends State<Welcome> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor:mycolors.primary,
         title:  Text("${selected.length} Selected"),
