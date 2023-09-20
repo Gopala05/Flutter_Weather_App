@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
   // API
   String api = "http://api.weatherapi.com/v1/forecast.json?key=4687ce1e6cd34ffa94b115942231609&days=6&aqi=no&alerts=no&q=";
 
-  void fetchdata() async {
+  void fetchdata(location) async {
     var weatherResult = await http.get(Uri.parse(api + location));
     var result = json.decode(weatherResult.body);
     var consolidate = result['forecast']['forecastday'];
@@ -57,19 +57,20 @@ class _MainScreenState extends State<MainScreen> {
   }
   @override
   void initState() {
-    fetchdata();
+    fetchdata(location);
     for(int i=0; i<selectedCities.length; i++) {
       cities.add(selectedCities[i].city);
     }
     super.initState();
   }
 
-  final Shader LinearGrad = const LinearGradient(colors: <Color> [
-     Color(0xFF9AC6F3)
-  ],).createShader(const React.fronLTWH(0.0, 0.0, 200.0, 70.0));
+  final Shader linearGradient = const LinearGradient(
+    colors: <Color>[Color(0xffABCFF2), Color(0xff9AC6F3)],
+  ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text("Main Screen"),
