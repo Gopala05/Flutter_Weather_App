@@ -101,33 +101,50 @@ class City{
         isDefault: false),
     City(
         isSelected: false,
-        city: 'Miami',
-        country: 'United States',
+        city: 'Mumbai',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Vienna',
-        country: 'Austria',
+        city: 'Nagpur',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Berlin',
-        country: 'Germany',
+        city: 'Nasik',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Toronto',
-        country: 'Canada',
+        city: 'Pune',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Brussels',
-        country: 'Belgium',
+        city: 'Surat',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Nairobi',
-        country: 'Kenya',
+        city: 'Vadodara',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Varanasi',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Vishakhapatnam',
+        country: 'India',
         isDefault: false),
   ];
 
