@@ -71,34 +71,40 @@ class City{
 
     City(
         isSelected: false,
-        city: 'Beijing',
-        country: 'China',
+        city: 'Jaipur',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Paris',
-        country: 'Paris',
+        city: 'Khanpur',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Rome',
-        country: 'Italy',
+        city: 'Kochi',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Lagos',
-        country: 'Nigeria',
+        city: 'Kolkata',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Amsterdam',
-        country: 'Netherlands',
+        city: 'Lucknow',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
-        city: 'Barcelona',
-        country: 'Spain',
+        city: 'Madurai',
+        country: 'India',
         isDefault: false),
+
     City(
         isSelected: false,
         city: 'Mumbai',
