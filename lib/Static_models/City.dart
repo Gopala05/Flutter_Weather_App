@@ -8,21 +8,67 @@ class City{
 
   //List of Cities data
   static List<City> citiesList = [
+
     City(
         isSelected: false,
-        city: 'London',
-        country: 'United Kindgom',
-        isDefault: true),
-    City(
-        isSelected: false,
-        city: 'Tokyo',
-        country: 'Japan',
+        city: 'Agra',
+        country: 'India',
         isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Ahmedabad',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Bangalore',
+        country: 'India',
+        isDefault: true),
+
+    City(
+        isSelected: false,
+        city: 'Bhopal',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Chandigarh',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Chennai',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Coimbatore',
+        country: 'India',
+        isDefault: false),
+
     City(
         isSelected: false,
         city: 'Delhi',
         country: 'India',
         isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Hyderabad',
+        country: 'India',
+        isDefault: false),
+
+    City(
+        isSelected: false,
+        city: 'Indore',
+        country: 'India',
+        isDefault: false),
+
     City(
         isSelected: false,
         city: 'Beijing',
