@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_app/UI/DetailPage.dart';
+import 'package:flutter_weather_app/Widgets/Weather_Item.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_weather_app/Static_models/City.dart';
 import 'package:flutter_weather_app/Static_models/Constant.dart';
-
 import 'package:intl/intl.dart';
 
 class MainScreen extends StatefulWidget {
@@ -72,9 +73,49 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Main Screen"),
+        automaticallyImplyLeading: false,
+        centerTitle: false,
+        titleSpacing: 0,
+        backgroundColor: Colors.white,
+        title: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          width: size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ClipRect(
+                // borderRadius: const BorderRadius.all(Radius.circular(10)),
+                child: Image.asset('assets/profile1.png', width: 40, height: 40,),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/pin.png', width: 20,),
+                  const SizedBox(width: 4,),
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      value: location,
+                        icon: const Icon(Icons.keyboard_arrow_down),
+                        items: cities.map((String location)
+                        {
+                          return DropdownMenuItem(
+                              value: location,
+                              child: Text(location)
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue){
+                          setState(() {
+                            location = newValue!;
+                            fetchdata(location);
+                          });
+                        }
+                    ),
       ),
     );
   }
 }
+
