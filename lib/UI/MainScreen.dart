@@ -75,7 +75,6 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Main Screen"),
         automaticallyImplyLeading: false,
         centerTitle: false,
         titleSpacing: 0,
@@ -114,6 +113,182 @@ class _MainScreenState extends State<MainScreen> {
                           });
                         }
                     ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(location, style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+            ),),
+            Text(currentDate, style: const TextStyle(
+              color: Color(0xFF1565C0),
+              fontSize: 22,
+            ),),
+            const SizedBox(
+              height: 50,
+            ),
+            Container(
+              width: size.width,
+              height: 200,
+              decoration: BoxDecoration(
+                color: mycolours.primary,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: mycolours.primary.withOpacity(.5),
+                    offset: const Offset(0, 25),
+                    blurRadius: 10,
+                    spreadRadius: -12,
+                  )
+                ]
+              ),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Positioned(
+                    top: -40,
+                    left: 20,
+                    child: imageUrl == ''? const Text('') : Image.asset('assets/$imageUrl.png', width: 160,),
+                  ),
+                  Positioned(
+                    bottom: 25,
+                    left: 20,
+                    child: Text(weatherState, style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  ),
+                  Positioned(
+                    top: 20,
+                      right: 20,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                          child: Text(temperature.toString(), style: TextStyle(
+                            fontSize: 65,
+                            fontWeight: FontWeight.bold,
+                            foreground: Paint()..shader = linearGradient,
+                          ),),),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4.0),
+                            child: Text('o', style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              foreground: Paint()..shader = linearGradient,
+                            ),),),
+                        ],
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50,),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  WeatherItem(
+                    text: 'Wind Speed',
+                    value: windSpeed,
+                    unit: 'km/h',
+                    imageUrl: 'assets/windspeed.png',
+                  ),
+                  WeatherItem(
+                    text: 'Humidity',
+                    value: humidity.toDouble(),
+                    unit: '%',
+                    imageUrl: 'assets/humidity.png',
+                  ),
+                  WeatherItem(
+                    text: 'Max Temp',
+                    value: maxTemp,
+                    unit: 'C',
+                    imageUrl: 'assets/max-temp.png',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text("Today", style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
+                ),),
+                Text("Next 7 days", style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                  color: mycolours.primary
+                ),)
+              ],
+            ),
+            const SizedBox(height: 20,),
+            Expanded(child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: consolidatedWeatherList.length,
+                itemBuilder: (BuildContext context, int index){
+                  String today = DateTime.now().toString().substring(0,10);
+                  var selectedDay = consolidatedWeatherList[index]['date'];
+                  var futureWeatherName = consolidatedWeatherList[index]['day']['condition']['text'];
+                  var weartherUrl = futureWeatherName.replaceAll('','').toLowerCase();
+
+                  var parsedDate = DateTime.parse(consolidatedWeatherList[index]['date']);
+                  var newDate = DateFormat('EEE').format(parsedDate).substring(0,3);
+                  return GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(consolidatedWeatherList: consolidatedWeatherList, selectedId: index, location: location,)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+                      width: 82,
+                      decoration: BoxDecoration(
+                        color: selectedDay == today ? mycolours.primary : Colors.white,
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(0, 1),
+                            blurRadius: 7,
+                            color: selectedDay == today ? mycolours.primary : Colors.black87.withOpacity(.2),
+                          )
+                        ]
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(consolidatedWeatherList[index]['hour'][0]['temp_c'].toString()+" C", style: TextStyle(
+                            fontSize: 18,
+                            color: selectedDay == today ? Colors.white : mycolours.primary,
+                            fontWeight: FontWeight.w500,
+                          ),),
+                          Image.asset('assets/' +weartherUrl+'.png', width: 35,),
+                          Text(newDate, style: TextStyle(
+                            fontSize: 18,
+                            color: selectedDay == today ? Colors.white : mycolours.primary,
+                            fontWeight: FontWeight.w500,
+                          ),)
+                        ],
+                      ),
+                    ),
+                  );
+                }))
+          ],
+        ),
       ),
     );
   }
