@@ -22,12 +22,12 @@ class WeatherItem extends StatelessWidget {
           height: 10,
         ),
         Container(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(9.5),
           height: 60,
           width: 60,
           decoration: const BoxDecoration(
             color: Color(0xFFFFb300),
-            borderRadius: BorderRadius.all(Radius.circular(15)),
+            borderRadius: BorderRadius.all(Radius.circular(18)),
           ),
           child: Image.asset(imageUrl),
         ),
