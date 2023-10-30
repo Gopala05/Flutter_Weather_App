@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   child: const Center(
-                    child: Text("Wanna Know your City's Forecast ", style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold),),
+                    child: Text("Wanna Know your City's Forecast !", style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold),),
                   ),
                 ),
               ),
