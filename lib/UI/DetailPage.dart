@@ -73,14 +73,7 @@ class _DetailPageState extends State<DetailPage> {
                     decoration: BoxDecoration(
                       color: index == selectedIndex ? Colors.white : mycolours.primary,
                       borderRadius: const BorderRadius.all(Radius.circular(11)),
-                      boxShadow: [
-                        BoxShadow(
-                          offset:  const Offset(0, 1),
-                          blurRadius: 8,
-                          color:  Colors.cyanAccent.withOpacity(0.5),
-                        )
-                      ]
-                    ),
+                      
                     child: Column(
                       mainAxisAlignment:  MainAxisAlignment.spaceBetween,
                       children: [
