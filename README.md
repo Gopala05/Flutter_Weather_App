@@ -1,5 +1,5 @@
 # flutter_weather_app
 
-A new Flutter project.
+A Weather Forecast Displaying Application
 
 ## Getting Started
