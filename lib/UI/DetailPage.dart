@@ -278,11 +278,11 @@ class _DetailPageState extends State<DetailPage> {
                                       children: [
                                         Image.asset('assets/'+futureImageUrl+'.png', width: 30,),
                                         if(futureWeatherName.toString().toLowerCase() == "patchy rain possible")...[
-                                          Text("Patchy rain"),
+                                          Text("Patchy Rain"),
                                         ] else if(futureWeatherName.toString().toLowerCase() == "thundery outbreaks possible")...[
-                                          Text("Thundery outbreaks"),
+                                          Text("Thundery Otbreaks"),
                                         ]else if(futureWeatherName.toString().toLowerCase() == "light rain shower")...[
-                                          Text("light rain"),
+                                          Text("Light Rain"),
                                         ]else...[
                                           Text(futureWeatherName),
                                         ]
