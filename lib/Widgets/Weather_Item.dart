@@ -34,7 +34,8 @@ class WeatherItem extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Text(value.toString()+" "+ unit, style: const TextStyle(
+        Text(value.toString()+" "+ unit, 
+        style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 15,
         ),)
