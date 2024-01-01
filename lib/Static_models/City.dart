@@ -6,9 +6,7 @@ class City{
 
   City({required this.isSelected, required this.city, required this.country, required this.isDefault});
 
-  //List of Cities data
   static List<City> citiesList = [
-
     City(
         isSelected: false,
         city: 'Agra',
