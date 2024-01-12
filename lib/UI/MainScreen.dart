@@ -30,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
   List<String> cities = ['Bangalore'];
   List consolidatedWeatherList = [];
 
-  // API Used
+  // API to Fetch the Wether Data
   String api = "http://api.weatherapi.com/v1/forecast.json?key=4687ce1e6cd34ffa94b115942231609&days=6&aqi=no&alerts=no&q=";
 
   void fetchdata(location) async {
@@ -156,7 +156,7 @@ class _MainScreenState extends State<MainScreen> {
                   Positioned(
                     top: -40,
                     left: 20,
-                    child: imageUrl == ''? const Text('') : Image.asset('assets/$imageUrl.png', width: 160,),
+                    child: imageUrl == ''? const Text('') : Image.asset('assets/$imageUrl.png', width: 160),
                   ),
                   Positioned(
                     bottom: 25,
