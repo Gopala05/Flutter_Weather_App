@@ -1,3 +1,3 @@
-# flutter_weather_app
+# Weather Application
 
 A Weather Forecast Displaying Application
