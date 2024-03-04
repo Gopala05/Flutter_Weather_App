@@ -1,3 +1,3 @@
-# Weather Application
+# Weather-App
 
-A Weather Forecast Application Built using Flutter.
+A Weather Forecast Application using Flutter.
