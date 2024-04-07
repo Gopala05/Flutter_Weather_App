@@ -1,3 +1,3 @@
-# Weather-forecast-App
+# Weather-Forecast-App
 --------------
 A Weather Forecast Application using Flutter.
